@@ -1,56 +1,678 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Pro-XII by SXB Solutions LLC</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy | Pro-XII</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, sans-serif;
+        line-height: 1.6;
+        color: #1f2937;
+        background: linear-gradient(135deg, #dbeafe 0%, #e0e7ff 100%);
+        min-height: 100vh;
+      }
+
+      .container {
+        max-width: 1024px;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+      }
+
+      /* Header Styles */
+      .header {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .header-icon {
+        width: 64px;
+        height: 64px;
+        margin: 0 auto 1rem;
+        background: #2563eb;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 2rem;
+      }
+
+      .header h1 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #1f2937;
+        margin-bottom: 1rem;
+      }
+
+      .header .subtitle {
+        font-size: 1.125rem;
+        color: #6b7280;
+        margin-bottom: 0.5rem;
+      }
+
+      .header .last-updated {
+        font-size: 0.875rem;
+        color: #9ca3af;
+      }
+
+      /* Card Styles */
+      .card {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        margin-bottom: 2rem;
+        overflow: hidden;
+      }
+
+      .card-content {
+        padding: 1.5rem;
+      }
+
+      .card.highlight {
+        background: #dbeafe;
+        border: 1px solid #93c5fd;
+      }
+
+      .card.contact {
+        background: #dbeafe;
+        border: 1px solid #93c5fd;
+      }
+
+      /* Section Headers */
+      .section-header {
+        display: flex;
+        align-items: center;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #1f2937;
+        margin-bottom: 1.5rem;
+      }
+
+      .section-icon {
+        width: 24px;
+        height: 24px;
+        margin-right: 0.5rem;
+        color: #2563eb;
+      }
+
+      /* Quick Summary Grid */
+      .summary-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        text-align: center;
+      }
+
+      .summary-item {
+        padding: 1rem;
+      }
+
+      .summary-item-icon {
+        width: 32px;
+        height: 32px;
+        margin: 0 auto 0.5rem;
+        background: #2563eb;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1rem;
+      }
+
+      .summary-item h3 {
+        font-weight: 600;
+        color: #1e40af;
+        margin-bottom: 0.25rem;
+      }
+
+      .summary-item p {
+        font-size: 0.875rem;
+        color: #6b7280;
+      }
+
+      /* Two Column Grid */
+      .two-column {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+      }
+
+      /* Lists */
+      .custom-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      .custom-list li {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 0.75rem;
+        color: #6b7280;
+      }
+
+      .custom-list li::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        background: #2563eb;
+        border-radius: 50%;
+        margin-right: 0.75rem;
+        margin-top: 0.5rem;
+        flex-shrink: 0;
+      }
+
+      /* Do/Don't Boxes */
+      .do-dont-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+      }
+
+      .do-box {
+        background: #f0fdf4;
+        border: 1px solid #bbf7d0;
+        border-radius: 8px;
+        padding: 1rem;
+      }
+
+      .dont-box {
+        background: #fef2f2;
+        border: 1px solid #fecaca;
+        border-radius: 8px;
+        padding: 1rem;
+      }
+
+      .do-box h3 {
+        color: #166534;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+
+      .dont-box h3 {
+        color: #991b1b;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+
+      .do-box ul,
+      .dont-box ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .do-box li {
+        color: #166534;
+        font-size: 0.875rem;
+        margin-bottom: 0.25rem;
+      }
+
+      .dont-box li {
+        color: #991b1b;
+        font-size: 0.875rem;
+        margin-bottom: 0.25rem;
+      }
+
+      /* Rights Section */
+      .rights-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .right-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+      }
+
+      .right-icon {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        font-size: 1rem;
+        font-weight: bold;
+      }
+
+      .right-icon.view {
+        background: #dbeafe;
+        color: #2563eb;
+      }
+      .right-icon.edit {
+        background: #dbeafe;
+        color: #2563eb;
+      }
+      .right-icon.delete {
+        background: #fee2e2;
+        color: #dc2626;
+      }
+      .right-icon.email {
+        background: #fef3c7;
+        color: #d97706;
+      }
+
+      .right-content h3 {
+        font-weight: 600;
+        color: #1f2937;
+        margin-bottom: 0.25rem;
+      }
+
+      .right-content p {
+        font-size: 0.875rem;
+        color: #6b7280;
+      }
+
+      /* Security Grid */
+      .security-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+        text-align: center;
+        background: #f9fafb;
+        padding: 1rem;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+      }
+
+      .security-item-icon {
+        width: 48px;
+        height: 48px;
+        margin: 0 auto 0.5rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+      }
+
+      .security-item-icon.encryption {
+        background: #f0fdf4;
+        color: #16a34a;
+      }
+      .security-item-icon.servers {
+        background: #dbeafe;
+        color: #2563eb;
+      }
+      .security-item-icon.access {
+        background: #f3e8ff;
+        color: #9333ea;
+      }
+
+      .security-item h4 {
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+      }
+
+      .security-item p {
+        font-size: 0.875rem;
+        color: #6b7280;
+      }
+
+      /* Simple Policies Grid */
+      .simple-policies {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .simple-policy h3 {
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: #1f2937;
+        margin-bottom: 0.75rem;
+      }
+
+      .simple-policy p {
+        font-size: 0.875rem;
+        color: #6b7280;
+      }
+
+      /* Contact Buttons */
+      .contact-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .contact-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.75rem 1.5rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.2s;
+      }
+
+      .contact-button.primary {
+        background: #2563eb;
+        color: white;
+      }
+
+      .contact-button.primary:hover {
+        background: #1d4ed8;
+      }
+
+      .contact-button.secondary {
+        background: transparent;
+        color: #2563eb;
+        border: 1px solid #2563eb;
+      }
+
+      .contact-button.secondary:hover {
+        background: #dbeafe;
+      }
+
+      .contact-button-icon {
+        margin-right: 0.5rem;
+      }
+
+      /* Footer */
+      .footer {
+        text-align: center;
+        margin-top: 3rem;
+        padding-top: 2rem;
+        border-top: 1px solid #e5e7eb;
+      }
+
+      .footer p {
+        font-size: 0.875rem;
+        color: #9ca3af;
+      }
+
+      /* Responsive Design */
+      @media (min-width: 640px) {
+        .container {
+          padding: 2rem 1.5rem;
         }
-        h1 {
-            color: #2c3e50;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 10px;
+
+        .contact-buttons {
+          flex-direction: row;
         }
-        .effective-date {
-            font-weight: bold;
-            margin-bottom: 20px;
+      }
+
+      @media (max-width: 768px) {
+        .header h1 {
+          font-size: 2rem;
         }
-        ul {
-            padding-left: 20px;
+
+        .section-header {
+          font-size: 1.25rem;
         }
-        li {
-            margin-bottom: 8px;
+
+        .card-content {
+          padding: 1rem;
         }
-        a {
-            color: #3498db;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
+      }
     </style>
-</head>
-<body>
-    <h1>Privacy Policy</h1>
-    <p class="effective-date">Effective Date: April 28, 2025</p>
-    
-    <p>Pro-XII, operated by SXB Solutions LLC, is committed to protecting your privacy. We collect only the information you choose to share via the app, such as contact details, location data (with permission), and usage analytics.</p>
-    
-    <p>Your data is:</p>
-    <ul>
-        <li>Never sold to third parties</li>
-        <li>Stored securely using industry-standard encryption</li>
-        <li>Only used to provide and improve app functionality</li>
-    </ul>
-    
-    <p>You can update or delete your information at any time. For questions or requests, please contact us at <a href="mailto:support@sxbsolutions.com">support@sxbsolutions.com</a>.</p>
-</body>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <div class="header">
+        <div class="header-icon">🛡️</div>
+        <h1>Privacy Policy</h1>
+        <p class="subtitle">We respect your privacy and protect your data</p>
+        <p class="last-updated">Last updated: June 14, 2025</p>
+      </div>
+
+      <!-- Quick Summary -->
+      <div class="card highlight">
+        <div class="card-content">
+          <h2 class="section-header">
+            <span class="section-icon">👁️</span>
+            Quick Summary
+          </h2>
+          <div class="summary-grid">
+            <div class="summary-item">
+              <div class="summary-item-icon">🔒</div>
+              <h3>We protect your data</h3>
+              <p>Industry-standard security</p>
+            </div>
+            <div class="summary-item">
+              <div class="summary-item-icon">👥</div>
+              <h3>We don't sell your info</h3>
+              <p>Your data stays private</p>
+            </div>
+            <div class="summary-item">
+              <div class="summary-item-icon">📄</div>
+              <h3>You have control</h3>
+              <p>Access, update, or delete</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- What We Collect -->
+      <div class="card">
+        <div class="card-content">
+          <h2 class="section-header">
+            <span class="section-icon">👁️</span>
+            What Information We Collect
+          </h2>
+
+          <div class="two-column">
+            <div>
+              <h3
+                style="font-weight: 600; color: #1f2937; margin-bottom: 0.75rem"
+              >
+                When you sign up:
+              </h3>
+              <ul class="custom-list">
+                <li>Your email and name</li>
+                <li>Contact details you provide</li>
+                <li>Content you create in the app</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3
+                style="font-weight: 600; color: #1f2937; margin-bottom: 0.75rem"
+              >
+                Automatically collected:
+              </h3>
+              <ul class="custom-list">
+                <li>How you use the app</li>
+                <li>Your device type and location</li>
+                <li>Technical info for app improvement</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- How We Use It -->
+      <div class="card">
+        <div class="card-content">
+          <h2 class="section-header">
+            <span class="section-icon">🌐</span>
+            How We Use Your Information
+          </h2>
+
+          <div class="do-dont-grid">
+            <div class="do-box">
+              <h3>✅ What we do:</h3>
+              <ul>
+                <li>• Make the app work better for you</li>
+                <li>• Send you important updates</li>
+                <li>• Keep your account secure</li>
+                <li>• Fix bugs and improve features</li>
+              </ul>
+            </div>
+
+            <div class="dont-box">
+              <h3>❌ What we don't do:</h3>
+              <ul>
+                <li>• Sell your personal information</li>
+                <li>• Share data without permission</li>
+                <li>• Send spam or unwanted emails</li>
+                <li>• Track you across other websites</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Your Rights -->
+      <div class="card">
+        <div class="card-content">
+          <h2 class="section-header">
+            <span class="section-icon">👥</span>
+            Your Rights & Control
+          </h2>
+
+          <div class="rights-grid">
+            <div class="right-item">
+              <div class="right-icon view">👁️</div>
+              <div class="right-content">
+                <h3>See your data</h3>
+                <p>Request a copy of all information we have about you</p>
+              </div>
+            </div>
+
+            <div class="right-item">
+              <div class="right-icon edit">📝</div>
+              <div class="right-content">
+                <h3>Update your info</h3>
+                <p>Change or correct your personal information anytime</p>
+              </div>
+            </div>
+
+            <div class="right-item">
+              <div class="right-icon delete">✕</div>
+              <div class="right-content">
+                <h3>Delete your account</h3>
+                <p>Remove all your data from our systems permanently</p>
+              </div>
+            </div>
+
+            <div class="right-item">
+              <div class="right-icon email">📧</div>
+              <div class="right-content">
+                <h3>Control emails</h3>
+                <p>Unsubscribe from marketing emails anytime</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Security & Safety -->
+      <div class="card">
+        <div class="card-content">
+          <h2 class="section-header">
+            <span class="section-icon">🔒</span>
+            How We Keep Your Data Safe
+          </h2>
+
+          <div class="security-grid">
+            <div class="security-item">
+              <div class="security-item-icon encryption">🔒</div>
+              <h4>Encryption</h4>
+              <p>Your data is scrambled in transit</p>
+            </div>
+            <div class="security-item">
+              <div class="security-item-icon servers">🛡️</div>
+              <h4>Secure Servers</h4>
+              <p>Protected data centers</p>
+            </div>
+            <div class="security-item">
+              <div class="security-item-icon access">👁️</div>
+              <h4>Limited Access</h4>
+              <p>Only authorized staff can see data</p>
+            </div>
+          </div>
+
+          <p style="font-size: 0.875rem; color: #6b7280">
+            <strong>Important:</strong> While we do our best to protect your
+            information, no system is 100% secure. We'll notify you immediately
+            if there's ever a security issue.
+          </p>
+        </div>
+      </div>
+
+      <!-- Simple Policies -->
+      <div class="simple-policies">
+        <div class="card">
+          <div class="card-content">
+            <div class="simple-policy">
+              <h3>👶 Children's Privacy</h3>
+              <p>
+                Our app is for users 13 and older. If we accidentally collect a
+                child's information, we'll delete it right away.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-content">
+            <div class="simple-policy">
+              <h3>🔄 Policy Updates</h3>
+              <p>
+                If we change this policy, we'll email you and post a notice in
+                the app. Big changes get 30 days notice.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact -->
+      <div class="card contact">
+        <div class="card-content">
+          <h2 class="section-header">
+            <span class="section-icon">📧</span>
+            Questions? We're Here to Help
+          </h2>
+
+          <p style="color: #1e40af; margin-bottom: 1rem">
+            Don't hesitate to reach out if you have any questions about your
+            privacy or this policy.
+          </p>
+
+          <div class="contact-buttons">
+            <a
+              href="mailto:support@sxbsolutions.com"
+              class="contact-button primary"
+            >
+              <span class="contact-button-icon">📧</span>
+              Email Support
+            </a>
+            <a
+              href="https://www.pro-xii.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-button secondary"
+            >
+              <span class="contact-button-icon">🌐</span>
+              Visit Website
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="footer">
+        <p>
+          © 2025 Pro-XII by SXB Solutions LLC. This policy is effective as of
+          June 14, 2025.
+        </p>
+      </div>
+    </div>
+  </body>
 </html>
